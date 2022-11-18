@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "1%",
         padding: "15px",
         maxWidth: "1000px",
-        borderColor: "pink"
+        borderColor: "primary"
     
     },
     ParentSkillSection: {

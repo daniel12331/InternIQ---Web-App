@@ -277,7 +277,7 @@ const validateSocialLinks = () => {
               </Button>
               <Button
                 variant="contained"
-                color="secondary"
+                color="primary"
                 onClick={handleNext}
                 className={classes.button}
               >
@@ -285,7 +285,7 @@ const validateSocialLinks = () => {
               </Button>
                   <Button
                     variant="contained"
-                    color="secondary"
+                    color="primary"
                     onClick={handleComplete}
                   >
                     {completedSteps() === totalSteps() - 1
