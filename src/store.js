@@ -1,5 +1,6 @@
 import { configureStore} from "@reduxjs/toolkit";
 import userSlice from "./features/user/userSlice";
+import allJobsSlice from "./features/jobs/jobSlice";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "../src/resumeBuilder/Reducer/index";
@@ -7,6 +8,7 @@ import rootReducer from "../src/resumeBuilder/Reducer/index";
 export const store = configureStore({
     reducer:{
         user : userSlice,
+        allJobs : allJobsSlice 
     }
 });
 

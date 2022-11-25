@@ -5,10 +5,10 @@ import { useSelector } from "react-redux";
 
 
 const BigSidebar = () => {
-    //const {isSidebarOpen} = useSelector((store) => store.user);
+    const {isSidebarOpen} = useSelector((store) => store.user);
     return (
     <Wrapper>
-        <div className='sidebar-container show-sidebar'>
+        <div className={isSidebarOpen?'sidebar-container show-sidebar': 'sidebar-container show-sidebar'}>
             <div className="content">
                 <header>
                     <Logo/>

@@ -13,7 +13,6 @@ import Project from "./projects"
 import Resume from "../Resume/index"
 
 import { connect } from "react-redux";
-import { TrendingUpRounded } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -114,7 +113,7 @@ function getStepContent(step) {
       return false
     }
 
-    if(props.profileData.Data.phone.length != 10 && props.profileData.Data.phone.length != 12 ){
+    if(props.profileData.Data.phone.length !== 10 && props.profileData.Data.phone.length !== 12 ){
       alert("Enter a valid phone number.")
       return false
     }
@@ -132,7 +131,7 @@ function getStepContent(step) {
         return false
       } 
 
-      if(instance.courseName.length < 1 || instance.completionYear.length != 4 || instance.college.length < 1 || instance.percentage.length < 1){
+      if(instance.courseName.length < 1 || instance.completionYear.length !== 4 || instance.college.length < 1 || instance.percentage.length < 1){
         alert("Incomplete or invalid data")
         return false
       } 
@@ -199,23 +198,23 @@ const validateSocialLinks = () => {
     console.log(activeStep)
     const action = getSteps()[activeStep]
 
-    if(action == "Profile Section"){
+    if(action === "Profile Section"){
 
       console.log("validating profile")
       flag = ValidateProfileDetails();
       console.log(flag)
       console.log(props.profileData.Data.fname)
 
-    }else if(action == "Education Section"){
+    }else if(action === "Education Section"){
       flag = validateEducationDetails();
       
-    }else if(action == "Mini Project"){
+    }else if(action === "Mini Project"){
       flag = validateProjectDetails()
 
-    }else if(action == "Skills Sector"){
+    }else if(action === "Skills Sector"){
       flag =  validateSkills()
 
-    }else if(action == "Social"){
+    }else if(action === "Social"){
       flag = validateSocialLinks()
     }
    

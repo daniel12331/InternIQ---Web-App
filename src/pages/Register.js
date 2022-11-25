@@ -5,6 +5,7 @@ import {toast} from 'react-toastify';
 //https://www.npmjs.com/package/react-toastify Toastify link/tutorial....
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, registerUser } from "../features/user/userSlice";
+import { useNavigate } from "react-router";
 
 
 const intialState = {
@@ -15,11 +16,10 @@ const intialState = {
 }
 
 function Register(){ 
-    const [values, setValues] = useState(intialState)
-
+const [values, setValues] = useState(intialState)
 const {user, isLoading} = useSelector(store => store.user)
 const dispatch = useDispatch();
-
+const navigate = useNavigate();
 const handleChange = (e) =>{
     const name = e.target.name;
     const value = e.target.value;
@@ -44,6 +44,13 @@ const onSubmit = (e) =>{
 const toggleMember = () => {
     setValues({...values, isMember: !values.isMember});
 }
+useEffect(()=>{
+if(user){
+    setTimeout(()=>{
+        navigate('/');
+    }, 2000);
+}
+},[user])
     return (
     <Wrapper className='full-page'> 
         <form className="form" onSubmit={onSubmit}>
@@ -67,8 +74,8 @@ const toggleMember = () => {
                 value={values.password}
                 handleChange={handleChange} />
 
-            <button type="submit" className="btn btn-block">
-                submit
+            <button type="submit" className="btn btn-block" disabled={isLoading}>
+                {isLoading?"loading..." : 'submit'}
             </button>
             <p>
             {values.isMember?'Not a member yet?':'Already a member?'}
