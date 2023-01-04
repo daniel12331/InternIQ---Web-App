@@ -5,7 +5,11 @@ import SmallSideBar from "./SmallSidebar";
 import BigSidebar from "./BigSidebar";
 import JobsContainer from "./JobsContainer";
 import SearchContainer from "./SearchContainer";
-
+import EmployerSmallSidebar from "./EmployerSmallSidebar";
+import EmployerBigSidebar from "./EmployerBigSidebar";
+import EmployerNavbar from "./EmployerNavbar";
+import FormRowSelect from "./FormRowSelect";
+import EmployerJobsContainer from "./EmployerJobsContainer";
 
 export {Logo, 
     FormRow,
@@ -14,4 +18,10 @@ export {Logo,
     Navbar,
     JobsContainer,
     SearchContainer,
+    EmployerBigSidebar,
+    EmployerSmallSidebar,
+    EmployerNavbar,
+    FormRowSelect,
+    EmployerJobsContainer
+    
     };

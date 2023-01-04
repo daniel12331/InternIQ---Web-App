@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import Job from './Job';
+import EmployerJob from './EmployerJob';
 import Wrapper from '../assets/wrapper/JobsContainer';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllJobs } from '../features/allJobs/allJobSlice';
 
-const JobsContainer = () => {
+const EmployerJobsContainer = () => {
   const {
     jobs,
     isLoading,
@@ -23,7 +23,7 @@ const JobsContainer = () => {
   }, [page, search, searchStatus, searchType, sort]);
 
   if (isLoading) {
-    return <h2>Loading Jobs</h2>;
+    return <h2>Jobs are loading</h2>;
   }
 
   if (jobs.length === 0) {
@@ -41,10 +41,10 @@ const JobsContainer = () => {
       </h5>
       <div className='jobs'>
         {jobs.map((job) => {
-          return <Job key={job._id} {...job} />;
+          return <EmployerJob key={job._id} {...job} />;
         })}
       </div>
     </Wrapper>
   );
 };
-export default JobsContainer;
+export default EmployerJobsContainer;

@@ -6,7 +6,6 @@ import {toast} from 'react-toastify';
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, registerUser } from "../features/user/userSlice";
 import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
 
 
 const intialState = {
@@ -16,7 +15,7 @@ const intialState = {
     isMember: true,
 }
 
-function Register(){ 
+function RegisterEmployer(){ 
 const [values, setValues] = useState(intialState)
 const {user, isLoading} = useSelector(store => store.user)
 const dispatch = useDispatch();
@@ -24,6 +23,7 @@ const navigate = useNavigate();
 const handleChange = (e) =>{
     const name = e.target.name;
     const value = e.target.value;
+    console.log(`${name}:${value}`)
     setValues({...values,[name]: value})
 }
 const onSubmit = (e) =>{
@@ -44,13 +44,6 @@ const onSubmit = (e) =>{
 const toggleMember = () => {
     setValues({...values, isMember: !values.isMember});
 }
-useEffect(()=>{
-if(user){
-    setTimeout(()=>{
-        navigate('/');
-    }, 2000);
-}
-},[user])
     return (
     <Wrapper className='full-page'> 
         <form className="form" onSubmit={onSubmit}>
@@ -59,13 +52,13 @@ if(user){
         {!values.isMember &&(
             <FormRow 
                 type='text' 
-                name='name' 
+                name='Organisation Name' 
                 value={values.name}
                 handleChange={handleChange} />
                 )}
             <FormRow 
                 type='email' 
-                name='email' 
+                name='Organisation Email Address ' 
                 value={values.email}
                 handleChange={handleChange} />
             <FormRow 
@@ -84,11 +77,8 @@ if(user){
                     {values.isMember?'Register':'Login'}
                 </button>
             </p>
-            <p> 
-                <Link to='/registerEmployer' className='member-btn'>Employer?</Link>
-                </p>
         </form>
     </Wrapper>
     );
     };
-    export default Register
+    export default RegisterEmployer

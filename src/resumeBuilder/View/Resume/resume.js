@@ -141,9 +141,7 @@ return (
                         <Typography variant="body2">
                         {instance.courseName ?instance.courseName :   null}
                         </Typography>
-                        <Typography variant="body2" >
-                           {instance.percentage ? " Percentage : "+instance.percentage+"%":   null} 
-                        </Typography>
+
                        </div>      
                         ) }
                    

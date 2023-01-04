@@ -52,7 +52,7 @@ const EducationForm = (props) => {
    console.log(index+1 , list.length)
    if(index+1 > list.length){
     while(index+1 != list.length){
-      list.push({courseName: null , completionYear: null, college: null , percentage: null })
+      list.push({courseName: null , completionYear: null, college: null })
     }
    }
    console.log(list)
@@ -121,17 +121,6 @@ const AddEducation = () => {
               defaultValue={props.educationFormData.Data && props.educationFormData.Data[i] ? props.educationFormData.Data[i].college : ""}
               name={`college`}
               label="College/School"
-              onChange={handleChange(i)}
-              variant="outlined"
-            />
-          </Grid>
-          <Grid item md={6} xs={12}>
-            <TextField
-              required
-              fullWidth
-              defaultValue={props.educationFormData.Data && props.educationFormData.Data[i] ? props.educationFormData.Data[i].percentage : ""}
-              name={`percentage`}
-              label="Percentage"
               onChange={handleChange(i)}
               variant="outlined"
             />

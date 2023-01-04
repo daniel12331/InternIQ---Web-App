@@ -1,28 +1,26 @@
 import { configureStore} from "@reduxjs/toolkit";
 import userSlice from "./features/user/userSlice";
-import allJobsSlice from "./features/jobs/jobSlice";
-import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import rootReducer from "../src/resumeBuilder/Reducer/index";
+import allJobsSlice from "./features/allJobs/allJobSlice";
+import jobSlice from "./features/jobs/jobSlice";
+import educationData from "./resumeBuilder/Reducer/Education/educationData";
+import profileData from "./resumeBuilder/Reducer/Profile/profileData";
+import projectsData from "./resumeBuilder/Reducer/Project/projectsData";
+import skillsData from "./resumeBuilder/Reducer/Skills/skillsData";
+import socialData from "./resumeBuilder/Reducer/Social/socialData";
 
 export const store = configureStore({
     reducer:{
         user : userSlice,
-        allJobs : allJobsSlice 
+        job : jobSlice,
+        allJobs : allJobsSlice,
+        Education : educationData,
+        Profile: profileData,
+        Skills: skillsData,
+        Social: socialData,
+        Project: projectsData
     }
 });
 
 
-const initialState = {};
-const middleware = [thunk];
 
-const stores = createStore(
-  rootReducer,
-  initialState,
-  applyMiddleware(...middleware)
-  // compose(
-  //   applyMiddleware(...middleware),
-  //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  // )
-);
-export default stores;
+export default store;

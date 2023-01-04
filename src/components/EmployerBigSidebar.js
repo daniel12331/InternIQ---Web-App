@@ -1,14 +1,14 @@
 import Wrapper from "../assets/wrapper/BigSidebar"
-import NavLinks from "./NavLinks";
+import NavLinks from "./EmployerNavLinks";
 import Logo from "./logo";
 import { useSelector } from "react-redux";
 
 
-const BigSidebar = () => {
+const EmployerBigSidebar = () => {
     const {isSidebarOpen} = useSelector((store) => store.user);
     return (
     <Wrapper>
-        <div className={isSidebarOpen?'sidebar-container' : 'sidebar-container show-sidebar'}>
+        <div className={isSidebarOpen?'sidebar-container show-sidebar': 'sidebar-container show-sidebar'}>
             <div className="content">
                 <header>
                     <Logo/>
@@ -19,4 +19,4 @@ const BigSidebar = () => {
         </div>
     </Wrapper>
     )};
-export default BigSidebar
+export default EmployerBigSidebar

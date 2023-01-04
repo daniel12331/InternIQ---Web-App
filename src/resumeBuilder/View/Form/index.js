@@ -126,12 +126,12 @@ function getStepContent(step) {
     const Data = props.educationFormData.Data;
     for(let i = 0 ; i < Data.length ; i++){
       const instance = Data[i]
-      if(!instance.courseName || !instance.completionYear || !instance.college || !instance.percentage){
+      if(!instance.courseName || !instance.completionYear || !instance.college){
         alert("Please fill all the data")
         return false
       } 
 
-      if(instance.courseName.length < 1 || instance.completionYear.length !== 4 || instance.college.length < 1 || instance.percentage.length < 1){
+      if(instance.courseName.length < 1 || instance.completionYear.length !== 4 || instance.college.length < 1 ){
         alert("Incomplete or invalid data")
         return false
       } 
