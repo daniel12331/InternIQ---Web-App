@@ -7,7 +7,7 @@ const NavLinks =(toggleSidebar) => {
         {links.map((link)=>{
             const{text,path,id,icon} = link
             return( <NavLink to={path} className={({isActive})=>{
-                return isActive?'nav-link active':'nav-link'
+                return isActive?'nav-linkemployer activeemployer':'nav-linkemployer'
             }}
             key={id}
             onClick={toggleSidebar}

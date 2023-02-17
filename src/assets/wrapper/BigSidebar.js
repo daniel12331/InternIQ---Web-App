@@ -40,13 +40,30 @@ const Wrapper = styled.aside`
       text-transform: capitalize;
       transition: var(--transition);
     }
+    .nav-linkemployer {
+      display: flex;
+      align-items: center;
+      color: var(--grey-500);
+      padding: 1rem 0;
+      padding-left: 2.5rem;
+      text-transform: capitalize;
+      transition: var(--transition);
+    }
     .nav-link:hover {
+      background: var(--grey-50);
+      padding-left: 3rem;
+      color: var(--grey-900);
+    }
+    .nav-linkemployer:hover {
       background: var(--grey-50);
       padding-left: 3rem;
       color: var(--grey-900);
     }
     .nav-link:hover .icon {
       color: var(--primary-500);
+    }
+    .nav-linkemployer:hover .icon {
+      color: var(--red-bright);
     }
     .icon {
       font-size: 1.5rem;
@@ -58,8 +75,14 @@ const Wrapper = styled.aside`
     .active {
       color: var(--grey-900);
     }
+    .activeemployer {
+      color: var(--grey-900);
+    }
     .active .icon {
       color: var(--primary-500);
+    }
+    .activeemployer .icon {
+      color: var(--red-bright);
     }
   }
 `

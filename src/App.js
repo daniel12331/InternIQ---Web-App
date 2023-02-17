@@ -1,4 +1,4 @@
-import{Landing, Error, Register, RegisterEmployer, ProtectedRoute} from './pages'
+import{Landing, Error, Register, RegisterEmployer, ProtectedRoute, ProtectedRouteEmployer} from './pages'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,7 +17,7 @@ function App() {
         <Route path='resume' element={<Resume/>}/>
       </Route>
 
-      <Route path="/employer/" element={<ProtectedRoute><EmployerSharedLayout/></ProtectedRoute>}> 
+      <Route path="/employer/" element={<ProtectedRouteEmployer><EmployerSharedLayout/></ProtectedRouteEmployer>}> 
       <Route index element={<EmployerHome/>}/>
         <Route path='addjobs' element={<AddJobs/>}/>
         <Route path='employerprofile' element={<EmployerProfile/>}/>

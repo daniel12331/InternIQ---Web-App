@@ -12,6 +12,10 @@ const Wrapper = styled.section`
     max-width: 400px;
     border-top: 5px solid var(--primary-500);
   }
+  .formemployer {
+    max-width: 400px;
+    border-top: 5px solid var(--red-bright);
+  }
   h3 {
     text-align: center;
   }

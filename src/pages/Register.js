@@ -47,7 +47,7 @@ const toggleMember = () => {
 useEffect(()=>{
 if(user){
     setTimeout(()=>{
-        navigate('/');
+        navigate('/register');
     }, 2000);
 }
 },[user])

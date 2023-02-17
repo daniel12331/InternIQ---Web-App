@@ -17,6 +17,7 @@ const Wrapper = styled.section`
     max-width: 100%;
     width: 100%;
   }
+  
   .form-row {
     margin-bottom: 0;
   }

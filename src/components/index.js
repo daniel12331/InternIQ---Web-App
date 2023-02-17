@@ -1,4 +1,5 @@
 import Logo from "./logo";
+import Logored from "./logo-red";
 import FormRow from "./FormRow";
 import Navbar from "./Navbar";
 import SmallSideBar from "./SmallSidebar";
@@ -12,6 +13,7 @@ import FormRowSelect from "./FormRowSelect";
 import EmployerJobsContainer from "./EmployerJobsContainer";
 
 export {Logo, 
+    Logored,
     FormRow,
     SmallSideBar,
     BigSidebar,

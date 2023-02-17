@@ -1,17 +1,18 @@
 import Wrapper from "../assets/wrapper/BigSidebar"
 import NavLinks from "./EmployerNavLinks";
-import Logo from "./logo";
+import Logored from "./logo-red";
 import { useSelector } from "react-redux";
 
 
 const EmployerBigSidebar = () => {
-    const {isSidebarOpen} = useSelector((store) => store.user);
+    const {isSidebarOpen} = useSelector((store) => store.employer);
     return (
     <Wrapper>
-        <div className={isSidebarOpen?'sidebar-container show-sidebar': 'sidebar-container show-sidebar'}>
+        <div className={isSidebarOpen?'sidebar-container show-sidebar': 'sidebar-container '}>
             <div className="content">
                 <header>
-                    <Logo/>
+                <Logored />
+
                 </header>
                 <NavLinks/>
 
