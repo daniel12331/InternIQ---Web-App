@@ -37,7 +37,7 @@ const EmployerJob = ({
         <footer>
           <div className='actions'>
             <Link
-              to='/add-job'
+              to='/employer/addjobs'
               className='btn edit-btn'
               onClick={() =>
                 dispatch(

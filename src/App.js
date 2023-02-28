@@ -2,7 +2,7 @@ import{Landing, Error, Register, RegisterEmployer, ProtectedRoute, ProtectedRout
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Jobs,Profile,Resume,SharedLayout,Home} from './pages/dashboard';
+import {Jobs,Profile,Resume,SharedLayout,Home,JobPage} from './pages/dashboard';
 import {AddJobs,EmployerProfile,EmployerSharedLayout,EmployerHome,EmployerJobsListed} from './pages/dashboardEmployer';
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <Route path="/" element={<ProtectedRoute><SharedLayout/></ProtectedRoute>}> 
       <Route index element={<Home/>}/>
         <Route path='jobs' element={<Jobs/>}/>
+        <Route path="/jobs/:id" element={<JobPage />} />
         <Route path='profile' element={<Profile/>}/>
         <Route path='resume' element={<Resume/>}/>
       </Route>

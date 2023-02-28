@@ -1,12 +1,12 @@
 import Wrapper from "../assets/wrapper/SmallSidebar";
 import {FaTimes} from 'react-icons/fa';
-import Logo from './logo';
+import Logo from './logo-red';
 import { useSelector, useDispatch } from "react-redux";
-import { toggleSidebar } from "../features/user/userSlice";
+import { toggleSidebar } from "../features/employer/employerSlice";
 import NavLinks from './EmployerNavLinks'
 
 const EmployerSmallSidebar = () => {
-    const {isSidebarOpen} = useSelector((store) => store.user)
+    const {isSidebarOpen} = useSelector((store) => store.employer)
     const dispatch = useDispatch();
 
     const toggle = () => {

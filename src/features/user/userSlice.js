@@ -11,6 +11,7 @@ import {
   registerUserThunk,
   updateUserThunk,
   clearStoreThunk,
+  registerApplicationThunk
 } from './userThunk';
 
 
@@ -20,6 +21,12 @@ const initialState = {
   user: getUserFromLocalStorage(),
 };
 
+export const registerApplication = createAsyncThunk(
+  'application/registerapplication',
+  async (user, thunkAPI) => {
+    return registerApplicationThunk('/application/registerapplication', user, thunkAPI);
+  }
+);
 export const registerUser = createAsyncThunk(
   'user/registerUser',
   async (user, thunkAPI) => {
@@ -60,6 +67,19 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+    .addCase(registerApplication.pending, (state) => {
+      state.isLoading = true;
+    })
+    .addCase(registerApplication.fulfilled, (state, { payload }) => {
+      const { application } = payload;
+      state.isLoading = false;
+      state.application = application;
+      toast.success(`Application Successful ${application.name}`);
+    })
+    .addCase(registerApplication.rejected, (state, { payload }) => {
+      state.isLoading = false;
+      toast.error(payload);
+    })
       .addCase(registerUser.pending, (state) => {
         state.isLoading = true;
       })

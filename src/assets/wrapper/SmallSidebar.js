@@ -45,11 +45,28 @@ const Wrapper = styled.aside`
     display: flex;
     flex-direction: column;
   }
+  .nav-linkemployer:hover {
+    background: var(--grey-50);
+    padding-left: 3rem;
+    color: var(--grey-900);
+  }
   .nav-link {
     display: flex;
     align-items: center;
     color: var(--grey-500);
     padding: 1rem 0;
+    text-transform: capitalize;
+    transition: var(--transition);
+  }
+  .nav-linkemployer:hover .icon {
+    color: var(--red-bright);
+  }
+  .nav-linkemployer {
+    display: flex;
+    align-items: center;
+    color: var(--grey-500);
+    padding: 1rem 0;
+    padding-left: 2.5rem;
     text-transform: capitalize;
     transition: var(--transition);
   }

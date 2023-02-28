@@ -7,11 +7,13 @@ const initialState = {
   position: '',
   company: '',
   jobLocation: '',
+  jobTypeOptions: ['In-Office', 'Remote', 'Hybrid'],
   jobType: 'In-Office',
-  statusOptions: ['interview', 'declined', 'pending'],
-  status: 'pending',
+  description: '',
   isEditing: false,
   editJobId: '',
+  applicationID: '',
+
 };
 
 export const createJob = createAsyncThunk('job/createJob', createJobThunk);
@@ -35,6 +37,9 @@ const jobSlice = createSlice({
     },
     setEditJob: (state, { payload }) => {
       return { ...state, isEditing: true, ...payload };
+    },
+    setApplication: (state, { payload }) => {
+      return { ...state, ...payload };
     },
   },
   extraReducers: (builder) => {
@@ -70,6 +75,6 @@ const jobSlice = createSlice({
   },
 });
 
-export const { handleChange, clearValues, setEditJob } = jobSlice.actions;
+export const { handleChange, clearValues, setEditJob, setApplication} = jobSlice.actions;
 
 export default jobSlice.reducer;

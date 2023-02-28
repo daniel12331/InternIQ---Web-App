@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { getAllJobsThunk, showStatsThunk } from './allJobsThunk';
+import { getAllJobsThunk, showStatsThunk, getJobThunk } from './allJobsThunk';
 
 const initialFiltersState = {
   search: '',
@@ -13,6 +13,7 @@ const initialFiltersState = {
 const initialState = {
   isLoading: true,
   jobs: [],
+  job: {},
   totalJobs: 0,
   numOfPages: 1,
   page: 1,
@@ -22,6 +23,8 @@ const initialState = {
 };
 
 export const getAllJobs = createAsyncThunk('allJobs/getJobs', getAllJobsThunk);
+
+export const getJob = createAsyncThunk('allJobs/getJob', getJobThunk);
 
 export const showStats = createAsyncThunk('allJobs/showStats', showStatsThunk);
 
@@ -49,6 +52,17 @@ const allJobsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+    .addCase(getJob.pending, (state) => {
+      state.isLoading = true;
+    })
+    .addCase(getJob.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.job = payload.job;
+    })
+    .addCase(getJob.rejected, (state, { payload }) => {
+      state.isLoading = false;
+      toast.error(payload);
+    })
       .addCase(getAllJobs.pending, (state) => {
         state.isLoading = true;
       })

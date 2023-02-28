@@ -9,6 +9,10 @@ const Wrapper = styled.section`
   h3 {
     margin-top: 0;
   }
+  .colour{
+    color: var(--primary-500);
+
+  }
   .form {
     margin: 0;
     border-radius: 0;
