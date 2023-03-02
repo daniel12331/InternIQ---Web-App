@@ -18,7 +18,10 @@ const initialState = {
   numOfPages: 1,
   page: 1,
   stats: {},
-  monthlyApplications: [],
+  monthlyApplications: [  { 
+    month: "January",
+    applications:"3"                 
+}],
   ...initialFiltersState,
 };
 

@@ -11,6 +11,8 @@ import EmployerBigSidebar from "./EmployerBigSidebar";
 import EmployerNavbar from "./EmployerNavbar";
 import FormRowSelect from "./FormRowSelect";
 import EmployerJobsContainer from "./EmployerJobsContainer";
+import ChartsContainer from "./ChartsContainer";
+import StatsContainer from "./StatsContainer";
 
 export {Logo, 
     Logored,
@@ -24,6 +26,8 @@ export {Logo,
     EmployerSmallSidebar,
     EmployerNavbar,
     FormRowSelect,
-    EmployerJobsContainer
+    EmployerJobsContainer,
+    ChartsContainer,
+    StatsContainer
     
     };
