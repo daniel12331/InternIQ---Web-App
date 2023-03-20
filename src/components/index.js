@@ -13,6 +13,9 @@ import FormRowSelect from "./FormRowSelect";
 import EmployerJobsContainer from "./EmployerJobsContainer";
 import ChartsContainer from "./ChartsContainer";
 import StatsContainer from "./StatsContainer";
+import AppliedJobsContainer from "./AppliedJobsContainer";
+import AppliedJobsContainerEmployer from "./AppliedJobsContainerEmployer";
+import AppliedJobEmployer from "./AppliedJobEmployer";
 
 export {Logo, 
     Logored,
@@ -28,6 +31,9 @@ export {Logo,
     FormRowSelect,
     EmployerJobsContainer,
     ChartsContainer,
-    StatsContainer
+    StatsContainer,
+    AppliedJobsContainer,
+    AppliedJobsContainerEmployer,
+    AppliedJobEmployer
     
     };

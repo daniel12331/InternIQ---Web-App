@@ -1,16 +1,34 @@
 import axios from 'axios';
 import { clearStore } from '../features/user/userSlice';
-import { getUserFromLocalStorage } from './localStorage';
+import { getUserFromLocalStorage, getEmployerFromLocalStorage } from './localStorage';
 
-const customFetch = axios.create({
+export const customFetch = axios.create({
   baseURL: 'http://localhost:8000/api/',
 });
 
+export const customFetchU = axios.create({
+  baseURL: 'http://localhost:8000/api/',
+});
+
+
+
 customFetch.interceptors.request.use((config) => {
+  const employer = getEmployerFromLocalStorage();
+
+  if (employer) {
+    config.headers['Authorization'] = `Bearer ${employer.token}`;
+  }
+  
+  return config;
+});
+
+customFetchU.interceptors.request.use((config) => {
   const user = getUserFromLocalStorage();
+
   if (user) {
     config.headers['Authorization'] = `Bearer ${user.token}`;
   }
+  
   return config;
 });
 
@@ -22,4 +40,3 @@ export const checkForUnauthorizedResponse = (error, thunkAPI) => {
   return thunkAPI.rejectWithValue(error.response.data.msg);
 };
 
-export default customFetch;

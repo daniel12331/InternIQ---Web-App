@@ -2,8 +2,8 @@ import{Landing, Error, Register, RegisterEmployer, ProtectedRoute, ProtectedRout
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Jobs,Profile,Resume,SharedLayout,Home,JobPage} from './pages/dashboard';
-import {AddJobs,EmployerProfile,EmployerSharedLayout,EmployerHome,EmployerJobsListed} from './pages/dashboardEmployer';
+import {Jobs,Profile,Resume,SharedLayout,Home,JobPage, AppliedJobs} from './pages/dashboard';
+import {AddJobs,EmployerProfile,EmployerSharedLayout,EmployerHome,EmployerJobsListed, AppliedJobsEmployer} from './pages/dashboardEmployer';
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <Route index element={<Home/>}/>
         <Route path='jobs' element={<Jobs/>}/>
         <Route path="/jobs/:id" element={<JobPage />} />
+        <Route path='appliedjobs' element={<AppliedJobs/>}/>
         <Route path='profile' element={<Profile/>}/>
         <Route path='resume' element={<Resume/>}/>
       </Route>
@@ -23,6 +24,7 @@ function App() {
         <Route path='addjobs' element={<AddJobs/>}/>
         <Route path='employerprofile' element={<EmployerProfile/>}/>
         <Route path='employerjobslisted' element={<EmployerJobsListed/>}/>
+        <Route path='employerjobslisted/applicants/:id' element={<AppliedJobsEmployer/>}/>
 
       </Route>
 

@@ -8,12 +8,14 @@ import projectsData from "./resumeBuilder/Reducer/Project/projectsData";
 import skillsData from "./resumeBuilder/Reducer/Skills/skillsData";
 import socialData from "./resumeBuilder/Reducer/Social/socialData";
 import employerSlice from "./features/employer/employerSlice";
+import allApplictionSlice from "./features/applications/allApplictionSlice";
 
 export const store = configureStore({
     reducer:{
         user : userSlice,
         employer : employerSlice,
         job : jobSlice,
+        applications : allApplictionSlice,
         allJobs : allJobsSlice,
         Education : educationData,
         Profile: profileData,

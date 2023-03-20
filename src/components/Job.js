@@ -41,19 +41,7 @@ const Job = ({
               to={`/jobs/${_id}`}
               type='submit'
               className='btn btn-block submit-btn'
-              onClick={() =>
-                dispatch(
-                  setApplication({
-                     _id,
-                    position,
-                    company,
-                    jobLocation,
-                    jobType,
-                    description,
-                    totalApplicants
-                  })
-                )
-              }
+             
             >
               Apply
             </Link>
