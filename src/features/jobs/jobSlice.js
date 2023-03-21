@@ -1,26 +1,29 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import { getUserFromLocalStorage } from '../../utils/localStorage';
-import { createJobThunk, deleteJobThunk, editJobThunk } from './jobThunk';
+import { createJobThunk, deleteJobThunk, editJobThunk, addTotalApplicantsThunk} from './jobThunk';
 const initialState = {
   isLoading: false,
   position: '',
   company: '',
   jobLocation: '',
+  totalApplicants: '',
   jobTypeOptions: ['In-Office', 'Remote', 'Hybrid'],
   jobType: 'In-Office',
   description: '',
   isEditing: false,
   editJobId: '',
-  applicationID: '',
 
 };
+
 
 export const createJob = createAsyncThunk('job/createJob', createJobThunk);
 
 export const deleteJob = createAsyncThunk('job/deleteJob', deleteJobThunk);
 
 export const editJob = createAsyncThunk('job/editJob', editJobThunk);
+
+export const addTotalApplicants = createAsyncThunk('job/addApplicant', addTotalApplicantsThunk );
 
 const jobSlice = createSlice({
   name: 'job',
@@ -38,12 +41,11 @@ const jobSlice = createSlice({
     setEditJob: (state, { payload }) => {
       return { ...state, isEditing: true, ...payload };
     },
-    setApplication: (state, { payload }) => {
-      return { ...state, ...payload };
-    },
+
   },
   extraReducers: (builder) => {
     builder
+
       .addCase(createJob.pending, (state) => {
         state.isLoading = true;
       })
@@ -75,6 +77,6 @@ const jobSlice = createSlice({
   },
 });
 
-export const { handleChange, clearValues, setEditJob, setApplication} = jobSlice.actions;
+export const { handleChange, clearValues, setEditJob} = jobSlice.actions;
 
 export default jobSlice.reducer;

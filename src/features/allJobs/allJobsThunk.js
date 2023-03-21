@@ -1,5 +1,7 @@
-import customFetch, { checkForUnauthorizedResponse } from '../../utils/axios';
+import { checkForUnauthorizedResponse, customFetch } from '../../utils/axios';
 import { showLoading, hideLoading } from './allJobSlice';
+import { useParams} from 'react-router-dom';
+
 
 export const getAllJobsThunk = async (_, thunkAPI) => {
   const { page, search, searchStatus, searchType, sort } =
@@ -17,13 +19,13 @@ export const getAllJobsThunk = async (_, thunkAPI) => {
   }
 };
 
-export const getJobThunk = async (jobId, thunkAPI) => {
-    thunkAPI.dispatch(showLoading());
+export const  getJobThunk = async (_id, thunkAPI) => {
+  
+  let url = `/jobs/${_id}`;
   try {
-    const resp = await customFetch.get(`/jobs/${jobId}`);
+    const resp = await customFetch.get(url);
     return resp.data;
   } catch (error) {
-    thunkAPI.dispatch(hideLoading());
     return checkForUnauthorizedResponse(error, thunkAPI);
   }
 };

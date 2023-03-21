@@ -61,6 +61,15 @@ const EmployerJob = ({
             >
               delete
             </button>
+            <p></p>
+            <Link
+              to={`applicants/${_id}`}
+              type='submit'
+              className='btn btn-block submit-btn'
+             
+            >
+              View Applicants
+            </Link>
           </div>
         </footer>
       </div>

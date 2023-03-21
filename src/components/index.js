@@ -13,8 +13,13 @@ import FormRowSelect from "./FormRowSelect";
 import EmployerJobsContainer from "./EmployerJobsContainer";
 import ChartsContainer from "./ChartsContainer";
 import StatsContainer from "./StatsContainer";
-
-export {Logo, 
+import AppliedJobsContainer from "./AppliedJobsContainer";
+import AppliedJobsContainerEmployer from "./AppliedJobsContainerEmployer";
+import AppliedJobEmployer from "./AppliedJobEmployer";
+import LogoIQ from "./logoIQ";
+export {
+    LogoIQ,
+    Logo, 
     Logored,
     FormRow,
     SmallSideBar,
@@ -28,6 +33,9 @@ export {Logo,
     FormRowSelect,
     EmployerJobsContainer,
     ChartsContainer,
-    StatsContainer
+    StatsContainer,
+    AppliedJobsContainer,
+    AppliedJobsContainerEmployer,
+    AppliedJobEmployer
     
     };
