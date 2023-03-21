@@ -13,6 +13,22 @@ const Wrapper = styled.section`
     color: var(--primary-500);
 
   }
+  .edit-btn,
+  .delete-btn {
+    letter-spacing: var(--letterSpacing);
+    cursor: pointer;
+    height: 30px;
+  }
+  .edit-btn {
+    color: var(--green-dark);
+    background: var(--green-light);
+    margin-right: 0.5rem;
+  }
+  .delete-btn {
+    color: var(--red-dark);
+    background: var(--red-light);
+  }
+
   .form {
     margin: 0;
     border-radius: 0;

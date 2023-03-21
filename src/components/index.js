@@ -16,8 +16,10 @@ import StatsContainer from "./StatsContainer";
 import AppliedJobsContainer from "./AppliedJobsContainer";
 import AppliedJobsContainerEmployer from "./AppliedJobsContainerEmployer";
 import AppliedJobEmployer from "./AppliedJobEmployer";
-
-export {Logo, 
+import LogoIQ from "./logoIQ";
+export {
+    LogoIQ,
+    Logo, 
     Logored,
     FormRow,
     SmallSideBar,
