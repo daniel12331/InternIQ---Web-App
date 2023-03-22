@@ -17,7 +17,14 @@ import AppliedJobsContainer from "./AppliedJobsContainer";
 import AppliedJobsContainerEmployer from "./AppliedJobsContainerEmployer";
 import AppliedJobEmployer from "./AppliedJobEmployer";
 import LogoIQ from "./logoIQ";
+import ResumeTempOne from "./ResumeTempOne";
+import ResumeTempTwo from "./ResumeTempTwo";
+import ResumeTempThree from "./ResumeTempThree";
+
 export {
+    ResumeTempThree,
+    ResumeTempTwo,
+    ResumeTempOne,
     LogoIQ,
     Logo, 
     Logored,
