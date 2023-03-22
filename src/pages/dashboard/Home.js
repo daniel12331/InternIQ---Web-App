@@ -12,7 +12,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    //dispatch(showStats());
+    dispatch(showStats());
   }, []);
 
   return (

@@ -4,6 +4,9 @@ import { useReactToPrint } from "react-to-print";
 import { toast } from 'react-toastify';
 import html2pdf from 'html2pdf.js';
 import { ResumeTempOne, ResumeTempTwo, ResumeTempThree } from "../../components";
+import TempOne from '../../assets/images/TempOne.png'
+import TempTwo from '../../assets/images/TempTwo.png'
+import TempThree from '../../assets/images/TempThree.png'
 
 const ResumeDisplay = ({ result }) => {
 
@@ -11,7 +14,7 @@ const ResumeDisplay = ({ result }) => {
 	const componentRef = useRef();
 	const [image, setImage] = useState();
 	const [template, setTemplate] = useState(1);
-	const [color, setColor] = useState("");
+	const [color, setColor] = useState("#faebd7");
 
 	const handlePrint = useReactToPrint({
 		content: () => componentRef.current,
@@ -35,16 +38,39 @@ const ResumeDisplay = ({ result }) => {
 		  jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
 		});
 	  };
-
 	return (
 		<>
 		<div>
 			<h2>Templates</h2>
-			<button className='btn submit-btn ' onClick={() => setTemplate(1)}>Template One</button>
+			<button className='btn submit-btn ' onClick={() => setTemplate(1)}>
+						Template One 
+						<br></br>
+						<br></br>
+							 <img
+                            src={TempOne}
+                            alt={'TempOne'}
+							style={{height:80, width:100}}
+                        /></button>
 			{' '}
-            <button className='btn submit-btn' onClick={() => setTemplate(2)}>Template Two</button>
+			<button className='btn submit-btn ' onClick={() => setTemplate(2)}>
+						Template Two 
+						<br></br>
+						<br></br>
+							 <img
+                            src={TempTwo}
+                            alt={'TempTwo'}
+							style={{height:80, width:100}}
+                        /></button>
 			{' '}
-            <button className='btn submit-btn' onClick={() => setTemplate(3)}>Template Three</button>
+            <button className='btn submit-btn ' onClick={() => setTemplate(3)}>
+						Template Three 
+						<br></br>
+						<br></br>
+							 <img
+                            src={TempThree}
+                            alt={'TempThree'}
+							style={{height:80, width:100}}
+                        /></button>
 			</div>
 			<br/>
 			<div>

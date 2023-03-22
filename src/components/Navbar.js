@@ -1,9 +1,11 @@
 import Wrapper from '../assets/wrapper/Navbar';
 import { FaAlignLeft, FaUserCircle, FaCaretDown } from 'react-icons/fa';
-import Logo from './logo';
+import LogoIQ from './logoIQ';
+import Logo from '../assets/images/IntenIQ.png'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleSidebar, clearStore } from '../features/user/userSlice';
+import { useParams } from 'react-router-dom';
 
 const Navbar = () => {
   const [showLogout, setShowLogout] = useState(false);
@@ -13,16 +15,16 @@ const Navbar = () => {
   const toggle = () => {
     dispatch(toggleSidebar());
   };
-
+ const ss = useParams() 
+ 
   return (
     <Wrapper>
       <div className='nav-center'>
         <button type='button' className='toggle-btn' onClick={toggle}>
           <FaAlignLeft />
         </button>
-        <div>
-          <Logo />
-          <h3 className='logo-text'>dashboard</h3>
+        <div> 
+          <img src={Logo} alt='Logo' style={{height:100, width:120}}/>
         </div>
         <div className='btn-container'>
           <button

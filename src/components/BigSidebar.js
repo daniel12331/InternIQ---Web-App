@@ -1,6 +1,6 @@
 import Wrapper from "../assets/wrapper/BigSidebar"
 import NavLinks from "./NavLinks";
-import Logo from "./logo";
+import Logo from "../assets/images/IntenIQ-Logo.png";
 import { useSelector } from "react-redux";
 
 
@@ -11,7 +11,7 @@ const BigSidebar = () => {
         <div className={isSidebarOpen?'sidebar-container' : 'sidebar-container show-sidebar'}>
             <div className="content">
                 <header>
-                    <Logo/>
+                   <img src={Logo} alt='Logo' style={{height:120, width:140}}/>
                 </header>
                 <NavLinks/>
 

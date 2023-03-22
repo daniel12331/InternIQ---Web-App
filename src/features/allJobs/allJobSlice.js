@@ -19,10 +19,7 @@ const initialState = {
   numOfPages: 1,
   page: 1,
   stats: {},
-  monthlyApplications: [  { 
-    month: "January",
-    applications:"3"                 
-}],
+  monthlyApplications: [ ],
   ...initialFiltersState,
 };
 
@@ -88,8 +85,7 @@ const allJobsSlice = createSlice({
       })
       .addCase(showStats.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.stats = payload.defaultStats;
-        state.monthlyApplications = payload.monthlyApplications;
+        state.stats = payload;
       })
       .addCase(showStats.rejected, (state, { payload }) => {
         state.isLoading = false;

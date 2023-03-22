@@ -32,7 +32,7 @@ export const  getJobThunk = async (_id, thunkAPI) => {
 
 export const showStatsThunk = async (_, thunkAPI) => {
   try {
-    const resp = await customFetch.get('/jobs/stats');
+    const resp = await customFetch.get('/application/stats');
 
     return resp.data;
   } catch (error) {
