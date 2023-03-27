@@ -117,8 +117,8 @@ const hideDetailsPopUp = () => {
         <button className="btn submit-btn" onClick={close}>
           &times;
         </button>
-        <div className="header">Application Name - {name}</div>
-        <div className="header">Application Email - {email}</div>
+        <div className="">Application Name - {name}</div>
+        <div className="">Application Email - {email}</div>
 
               {blobData ? (
    <iframe title="PDF Viewer" src={blobData} width="100%" height="600px"></iframe>

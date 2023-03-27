@@ -1,25 +1,27 @@
 import { useEffect } from 'react';
-import { StatsContainer, Loading, ChartsContainer } from '../../components';
+import { StatsContainer, InterviewTips, ChartsContainer } from '../../components';
 import { useDispatch, useSelector } from 'react-redux';
-import { showStats } from '../../features/allJobs/allJobSlice';
+import { showStats } from '../../features/applications/allApplictionSlice';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-  
+
 const Home = () => {
-  const { isLoading, monthlyApplications } = useSelector(
-    (store) => store.allJobs
+  const { stats } = useSelector(
+    (store) => store.applications
   );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(showStats());
+   dispatch(showStats());
   }, []);
-
+const color = '#3b82f6'
   return (
     <>
 
       <StatsContainer />
-      {monthlyApplications.length > 0 && <ChartsContainer />}
+      {stats?.length > 0 && <ChartsContainer color={color} />}
+
+      <InterviewTips />
     </>
   );
 };

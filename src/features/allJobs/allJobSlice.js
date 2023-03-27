@@ -1,13 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { getAllJobsThunk, showStatsThunk, getJobThunk, getAllAppliedJobsThunk, createApplicationThunk} from './allJobsThunk';
+import { getAllJobsThunk, getJobThunk} from './allJobsThunk';
 
 const initialFiltersState = {
   search: '',
-  searchStatus: 'all',
-  searchType: 'all',
-  sort: 'latest',
-  sortOptions: ['latest', 'oldest', 'a-z', 'z-a'],
+  jobType: ''
 };
 
 const initialState = {
@@ -19,7 +16,6 @@ const initialState = {
   numOfPages: 1,
   page: 1,
   stats: {},
-  monthlyApplications: [ ],
   ...initialFiltersState,
 };
 
@@ -28,8 +24,6 @@ const initialState = {
 export const getAllJobs = createAsyncThunk('allJobs/getJobs', getAllJobsThunk);
 
 export const getJob = createAsyncThunk('allJobs/getJob', getJobThunk);
-
-export const showStats = createAsyncThunk('allJobs/showStats', showStatsThunk);
 
 const allJobsSlice = createSlice({
   name: 'allJobs',
@@ -80,17 +74,6 @@ const allJobsSlice = createSlice({
         state.isLoading = false;
         toast.error(payload);
       })
-      .addCase(showStats.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(showStats.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
-        state.stats = payload;
-      })
-      .addCase(showStats.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        toast.error(payload);
-      });
   },
 });
 

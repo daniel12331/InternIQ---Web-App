@@ -8,19 +8,15 @@ const EmployerJobsContainer = () => {
   const {
     jobs,
     isLoading,
-    page,
-    totalJobs,
-    numOfPages,
     search,
     searchStatus,
-    searchType,
-    sort,
+    searchType
   } = useSelector((store) => store.allJobs);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllJobs());
-  }, [page, search, searchStatus, searchType, sort]);
+  }, [search, searchStatus, searchType]);
 
   if (isLoading) {
     return <h2>Jobs are loading</h2>;

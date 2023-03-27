@@ -30,6 +30,7 @@ const jobSlice = createSlice({
   initialState,
   reducers: {
     handleChange: (state, { payload: { name, value } }) => {
+      console.log(name)
       state[name] = value;
     },
     clearValues: () => {
@@ -58,7 +59,7 @@ const jobSlice = createSlice({
         toast.error(payload);
       })
       .addCase(deleteJob.fulfilled, (state, { payload }) => {
-        toast.success(payload);
+        toast.success('Successfuly Deleted');
       })
       .addCase(deleteJob.rejected, (state, { payload }) => {
         toast.error(payload);

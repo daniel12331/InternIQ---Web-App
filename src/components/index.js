@@ -20,8 +20,13 @@ import LogoIQ from "./logoIQ";
 import ResumeTempOne from "./ResumeTempOne";
 import ResumeTempTwo from "./ResumeTempTwo";
 import ResumeTempThree from "./ResumeTempThree";
-
+import InterviewTips from "./InterviewTips";
+import StatItemEmployer from "./StatItemEmployer";
+import StatsContainerEmployer from "./StatsContainerEmployer";
 export {
+    StatsContainerEmployer,
+    StatItemEmployer,
+    InterviewTips,
     ResumeTempThree,
     ResumeTempTwo,
     ResumeTempOne,

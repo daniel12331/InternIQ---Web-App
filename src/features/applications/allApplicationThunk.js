@@ -83,3 +83,14 @@ export const setApplicantRequestThunk = async ({ _id, application }, thunkAPI) =
     return checkForUnauthorizedResponse(error, thunkAPI);
   }
 };
+
+export const showStatsThunk = async (_id, thunkAPI) => {
+  
+  let url = `/application/show/stats`;
+  try {
+    const resp = await customFetchU.get(url);
+    return resp.data;
+  } catch (error) {
+    return checkForUnauthorizedResponse(error, thunkAPI);
+  }
+};

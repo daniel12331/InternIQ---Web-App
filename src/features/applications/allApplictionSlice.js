@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { downloadFileThunk,uploadFileThunk, getAllAppliedJobsThunk, deleteApplicationThunk, setApplicantRequestThunk, createApplicationThunk, getApplicantsByJobIDThunk} from './allApplicationThunk';
+import { downloadFileThunk,uploadFileThunk, getAllAppliedJobsThunk, deleteApplicationThunk, setApplicantRequestThunk, createApplicationThunk, getApplicantsByJobIDThunk, showStatsThunk} from './allApplicationThunk';
 
 const initialFiltersState = {
   search: '',
@@ -18,7 +18,7 @@ const initialState = {
   totalJobs: 0,
   numOfPages: 1,
   page: 1,
-  stats: {},
+  stats: [],
   file : null,
 
   ...initialFiltersState,
@@ -37,6 +37,8 @@ export const getApplicantsByJobID = createAsyncThunk('applications/getApplicants
 export const setApplicantRequest = createAsyncThunk('job/addApplicant', setApplicantRequestThunk );
 
 export const deleteApplication = createAsyncThunk('applications/deleteApplication', deleteApplicationThunk);
+
+export const showStats = createAsyncThunk('applications/showStats', showStatsThunk);
 
 
 const allApplictionSlice = createSlice({
@@ -117,6 +119,17 @@ const allApplictionSlice = createSlice({
         toast.error("Application Successfully Deleted");
       })
       .addCase(deleteApplication.rejected, (state, { payload }) => {
+        toast.error(payload);
+      })
+      .addCase(showStats.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(showStats.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.stats = payload.appliedjobs;
+      })
+      .addCase(showStats.rejected, (state, { payload }) => {
+        state.isLoading = false;
         toast.error(payload);
       })
   },

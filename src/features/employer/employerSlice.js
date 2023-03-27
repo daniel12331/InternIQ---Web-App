@@ -37,7 +37,7 @@ export const loginEmployer = createAsyncThunk(
 export const updateEmployer = createAsyncThunk(
   'user/updateUser',
   async (user, thunkAPI) => {
-    return updateEmployerThunk('/auth/updateUser', user, thunkAPI);
+    return updateEmployerThunk('/employer/updateUser', user, thunkAPI);
   }
 );
 
