@@ -1,5 +1,5 @@
 # InternIQ - Web Application
-Project for final year project
+Final Year Project - Web Application
 
 ## ![InternIQ](https://user-images.githubusercontent.com/62666691/234292211-1848aa1b-eb8f-4ddf-8dd1-dba3c36fe39d.png)
 
